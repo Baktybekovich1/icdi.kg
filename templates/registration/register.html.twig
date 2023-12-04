@@ -4,13 +4,54 @@
 
 {% block body %}
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
-    }) }}
-    {{ form_row(registrationForm.agreeTerms) }}
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    {#    {{ form_start(registrationForm) }} #}
+    {#    {{ form_row(registrationForm.email) }} #}
+    {#    {{ form_row(registrationForm.plainPassword, { #}
+    {#        label: 'Password' #}
+    {#    }) }} #}
+    {#    {{ form_row(registrationForm.agreeTerms) }} #}
+    {#    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> #}
+    {#    <button type="submit" class="btn">Register</button> #}
+    {#    {{ form_end(registrationForm) }} #}
+
+
+    <main class="main">
+        <section class="message">
+            <div class="container">
+                <div class="message__content">
+                    <div class="message__left">
+                        <h2 class="message__title">Registration</h2>
+                        <p class="message__left-text"> Enter your email address and password to log into your account.
+                            If you do not have an account, please register. </p>
+
+                    </div>
+                    <div class="message__send">
+                        {#                        <form action="{{ path('app_register') }}" name="registrationForm" class="message__send-form" method="post"> #}
+                        {#                            <input type="email" name="email" id="first_name" placeholder="Email" #}
+                        {#                                   class="message__send-input"/> #}
+                        {#                            <input type="password" name="plainPassword" id="password" placeholder="Password" #}
+                        {#                                   class="message__send-input"/> #}
+                        {#                            {{ form_row(registrationForm.agreeTerms) }} #}
+                        {#                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> #}
+                        {#    #}
+                        {#                            <input type="submit" value="Enter" class="message__send-btn button"/> #}
+                        {#                            <a href="{{ path('app_login') }}" class="message__send-btn button">Authorization</a> #}
+
+                        {#                        </form> #}
+
+                        {{ form_start(registrationForm) }}
+                        {{ form_widget(registrationForm.email) }}
+                        {{ form_widget(registrationForm.plainPassword) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <button type="submit" class="message__send-btn button">Register</button>
+                        {{ form_end(registrationForm) }}
+
+
+                    </div>
+                    <a href="{{ path('app_login') }}" class="message__send-btn button">Authorization</a>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

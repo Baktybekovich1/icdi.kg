@@ -1454,7 +1454,7 @@ main {
 .message__send-text {
     margin: 5px 0px;
     padding: 18px;
-    max-width: 545px;
+    width: 525px;
     max-height: 60px;
     background: #FFFFFF;
     border: 1px solid #7A7A7A;
