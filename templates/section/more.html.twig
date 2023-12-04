@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block javascripts %}
+<link rel="stylesheet" href="css/section/more" >
+{% endblock %}
+
+{% block body %}
+
+
+    <main class="main">
+        <div class="blog-intro-container">
+            <section class="blog-intro">
+                <div class="container">
+                    <div class="bintro__content">
+                        <h1 class="bintro__title">Section</h1>
+                        <p class="bintro__subtitle">{{ section.name }}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container">
+            <div class="text-page">
+                <p>
+                    {{ section.description }}
+                </p>
+                <p>
+                    {{ section.getDateString }}
+                </p>
+                <p>
+                    {{ section.price }}
+                </p>
+            </div>
+        </div>
+        <section class="aboutus">
+            <div class="container">
+                <div class="aboutus__video-wrapper">
+                    <div class="aboutus__video">
+                        <img class="imf" src="/uploads/{{ section.img }}" alt="Фото">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="slider">
+            <div class="container slider__container">
+                <div class="swiper slider__content">
+                    <div class="swiper-wrapper slider__wrapper">
+                        <div class="swiper-slide slider__card">
+                            <h4 class="slider__card-title">Aid</h4>
+                            <p class="slider__card-text">
+                                Assanabil has established, equipped and furnished more than 40
+                                dispensaries and medical centers in the areas in need, and has
+                                also supported many government hospitals with the necessary
+                                medical devices. The foundation implements and operates many
+                                medical convoys and surgical and specialized
+                            </p>
+                            <a href="../blogdetail-page/index.html" class="slider__card-btn">More</a>
+                        </div>
+                        <div class="swiper-slide slider__card">
+                            <h4 class="slider__card-title">Education</h4>
+                            <p class="slider__card-text">
+                                Assanabil Foundation believes that the development of
+                                societies is an essential component of human and social
+                                stability and development, with the aim of upgrading the human
+                                condition to a decent life, then well-being, stability and
+                                development in line with the needs of society and its
+                                economic, social and intellectual capabilities.
+                            </p>
+                            <a href="../blogdetail-page/index.html" class="slider__card-btn">More</a>
+                        </div>
+                        <div class="swiper-slide slider__card">
+                            <h4 class="slider__card-title">Health</h4>
+                            <p class="slider__card-text">
+                                Assanabil has established, equipped and furnished more than 40
+                                dispensaries and medical centers in the areas in need, and has
+                                also supported many government hospitals with the necessary
+                                medical devices. The foundation implements and operates many
+                                medical convoys and surgical and specialized
+                            </p>
+                            <a href="../blogdetail-page/index.html" class="slider__card-btn">More</a>
+                        </div>
+                        <div class="swiper-slide slider__card">
+                            <h4 class="slider__card-title">Community development</h4>
+                            <p class="slider__card-text">
+                                The Assanabil Foundation in Kyrgyzstan and Central Asia has
+                                endeavored to achieve solidarity through a number of projects
+                                and programs such as building mosques, medical clinics,
+                                schools, drilling wells, sponsoring orphans, and helping poor
+                                families and people with special needs.
+                            </p>
+                            <a href="../blogdetail-page/index.html" class="slider__card-btn">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__controllers">
+                    <div class="custom-prev">
+                        <img src="../../images/prev.svg" alt="prev">
+                    </div>
+                    <div class="custom-next">
+                        <img src="../../images/nex.svg" alt="next">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+{% endblock %}
+

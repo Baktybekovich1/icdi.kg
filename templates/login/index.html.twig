@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <main class="main">
+        <section class="message">
+            <div class="container">
+                <div class="message__content">
+                    <div class="message__left">
+                        <h2 class="message__title">Authorization</h2>
+                        <p class="message__left-text"> Enter your email address and password to log into your account.
+                            If you do not have an account, please register. </p>
+
+                    </div>
+                    <div class="message__send">
+                        <form action="{{ path('app_login') }}" class="message__send-form" method="post">
+                            <input type="email" name="_username" id="first_name" placeholder="Email"
+                                   class="message__send-input"/>
+                            <input type="password" name="_password" id="password" placeholder="Password"
+                                   class="message__send-input"/>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <input type="submit" value="Enter" class="message__send-btn button"/>
+                            <a href="{{ path('app_register') }}" class="message__send-btn button">Register</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

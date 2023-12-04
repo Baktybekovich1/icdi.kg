@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="main">
+        <section class="message">
+            <div class="container">
+                <div class="message__content">
+                    <div class="message__left">
+                        <h2 class="message__title">Section</h2>
+                        <p class="message__left-text"> Заполните поля для добавления секции </p>
+
+                    </div>
+                    <div class="message__send">
+                        {{ form_start(FormType) }}
+                            {{ form_row(FormType.name) }}
+                            {{ form_row(FormType.price) }}
+                            {{ form_row(FormType.description) }}
+                            {{ form_row(FormType.address) }}
+{#                            {{ form_row(FormType.img) }}#}
+                        <button type="submit" class="btn">Submit</button>
+                        {{ form_end(FormType) }}
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
