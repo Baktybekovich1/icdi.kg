@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\SectionsRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -32,10 +33,16 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/about', name: 'app_about')]
+    #[Route('/api/about', name: 'app_about')]
     public function about()
     {
-        return $this->render('index/about.html.twig');
+        return new JsonResponse(
+            [
+                ['name' => "Akai", "id" => 1],
+                ['name' => "Eldar", "id" => 2]
+            ]
+        );
+
     }
 
 }
